@@ -1,4 +1,4 @@
-add_executable(main examples/main.cpp)
+add_executable(main examples/main.cpp ../src/add.cpp)
 
 
 include(${CMAKE_BINARY_DIR}/_deps/doctest-src/scripts/cmake/doctest.cmake)

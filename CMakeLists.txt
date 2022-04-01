@@ -27,7 +27,7 @@ CPMAddPackage(
 
 add_subdirectory(tests)
 
-add_executable(cpm_and_doctest src/main.cpp)
+add_executable(cpm_and_doctest src/main.cpp src/add.cpp)
 
 target_link_libraries(cpm_and_doctest spdlog)
 
