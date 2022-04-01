@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.18)
 
 project(cpm_and_doctest)
 
-enable_testing()
+option(UNIT_TEST "enable unit test" OFF)
+
 set(CMAKE_CXX_STANDARD 17)
 
 set(CPM_DOWNLOAD_VERSION 0.27.2) 
@@ -25,7 +26,10 @@ CPMAddPackage(
     GITHUB_REPOSITORY doctest/doctest
     VERSION 2.4.8)
 
-add_subdirectory(tests)
+if(UNIT_TEST)
+    enable_testing()
+    add_subdirectory(tests)
+endif()
 
 add_executable(cpm_and_doctest src/main.cpp src/add.cpp)
 
